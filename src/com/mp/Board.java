@@ -11,8 +11,8 @@ public class Board {
     }
 
     // Method
-    public Space getSpace(int row, int col) {
-        return this.space[row][col];
+    public Space setSpace(int row, int col, Space space) {
+        return this.space[row][col] = space;
     }
-
+    
 }
