@@ -46,8 +46,6 @@ public class Driver {
                 }
             }
 
-            over = manager.checkOver(board);
-
         } while(over = false);
     }
 }
