@@ -10,7 +10,7 @@ public class Board {
         this.space = new Space[4][4];
         for(int i = 0; i < 4; i ++) {
             for(int j = 0; j < 4; j++) {
-                this.space[i][j] = new Free(); 
+                this.space[i][j] = new Free();
             }
         }
         this.space[0][0] = new H();
@@ -23,6 +23,10 @@ public class Board {
     // Method
     public void setSpace(int row, int col, Space space) {
         this.space[row][col] = space;
+    }
+
+    public Space getSpace(int row, int col) {
+        return this.space[row][col];
     }
 
 }
