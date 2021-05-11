@@ -11,7 +11,7 @@ public class Driver {
         SystemManager manager = new SystemManager();
         Scanner sc = new Scanner(System.in);
 
-        do {
+        while(over == false) {
             board.printBoard();
             if(turn == true) {
                 System.out.println("Cha turn:");
@@ -24,7 +24,7 @@ public class Driver {
                 board.printBoard();
                 turn = !turn;
             }
-            else {
+            if(turn == false) {
                 System.out.println("Ord turn:");
                 System.out.print("Input row: ");
                 int row = Integer.parseInt(sc.nextLine());
@@ -44,15 +44,9 @@ public class Driver {
                     ordCount -= 2;
 
                     board.printBoard();
-
-                    System.out.println("Ord pick new space:");
-                    System.out.print("Input row: ");
-                    row = Integer.parseInt(sc.nextLine());
-                    System.out.print("Input column: ");
-                    col = Integer.parseInt(sc.nextLine());
                 }
             }
 
-        } while(over = false);
+        }
     }
 }
