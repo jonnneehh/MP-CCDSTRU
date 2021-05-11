@@ -43,7 +43,7 @@ public class Driver {
                     board.setSpace(row, col, new Free());
                     ordCount -= 2;
 
-                    board.printBoard(); 
+                    board.printBoard();
 
                     System.out.println("Ord pick new space:");
                     System.out.print("Input row: ");
