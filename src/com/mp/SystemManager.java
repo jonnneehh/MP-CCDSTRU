@@ -2,8 +2,12 @@ package com.mp;
 
 public class SystemManager {
 
+    public SystemManager() {
+
+    }
+
     // Methods
-    public void checkOver(boolean over, Board board) {
+    public boolean checkOver(Board board) {
         int chaCount;
 
         if(board.getSpace(0, 3) instanceof Cha) {
@@ -14,7 +18,7 @@ public class SystemManager {
             }
 
             if(chaCount == 3)
-                over = true;
+                return true;
         }
 
         if(board.getSpace(3, 1) instanceof Cha) {
@@ -25,7 +29,7 @@ public class SystemManager {
             }
 
             if(chaCount == 3)
-                over = true;
+                return true;
         }
 
         if(board.getSpace(3, 3) instanceof Cha) {
@@ -39,7 +43,7 @@ public class SystemManager {
             }
 
             if(chaCount == 3)
-                over = true;
+                return true;
         }
 
         if(board.getSpace(3, 0) instanceof Cha) {
@@ -53,8 +57,9 @@ public class SystemManager {
             }
 
             if(chaCount == 3)
-                over = true;
+                return true;
         }
 
+        return false; 
     }
 }
