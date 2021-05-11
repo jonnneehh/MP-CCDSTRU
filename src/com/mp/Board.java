@@ -8,11 +8,16 @@ public class Board {
     // Constructor
     public Board() {
         this.space = new Space[4][4];
+        for(int i = 0; i < 4; i ++) {
+            for(int j = 0; j < 4; j++) {
+                this.space[i][j] = new Free(); 
+            }
+        }
         this.space[0][0] = new H();
         this.space[1][0] = new H();
         this.space[2][0] = new H();
         this.space[0][1] = new H();
-        this.space[0][2] = new H(); 
+        this.space[0][2] = new H();
     }
 
     // Method
