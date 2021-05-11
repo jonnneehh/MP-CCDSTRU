@@ -11,7 +11,7 @@ public class Ord extends Space {
         else if(count == 4) {
             count -= 2;
             board.setSpace(row, col, new Free());
-            
+
         }
     }
 }
