@@ -3,11 +3,10 @@ package com.mp;
 public class Board {
 
     // Property
-    private Space space[][];
+    private Space space[][] = new Space[4][4];
 
     // Constructor
     public Board() {
-        this.space = new Space[4][4];
         for(int i = 0; i < 4; i ++) {
             for(int j = 0; j < 4; j++) {
                 this.space[i][j] = new Free();

@@ -49,7 +49,7 @@ public class SystemManager {
         if(board.getSpace(3, 0) instanceof Cha) {
             chaCount = 0;
             int j = 0;
-            for(int i = 3; i >= 1; i++) {
+            for(int i = 3; i >= 1; i--) {
                 if(board.getSpace(i, j) instanceof Cha)
                     chaCount++;
 
@@ -60,6 +60,18 @@ public class SystemManager {
                 return true;
         }
 
-        return false; 
+        int freeCount = 0;
+        for(int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if(board.getSpace(i, j) instanceof Free) {
+                    freeCount++;
+                }
+            }
+        }
+
+        if(freeCount == 0)
+            return true;
+
+        return false;
     }
 }
