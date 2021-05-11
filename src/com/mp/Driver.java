@@ -12,6 +12,7 @@ public class Driver {
         Scanner sc = new Scanner(System.in);
 
         do {
+            board.printBoard();
             if(turn == true) {
                 System.out.println("Cha turn:");
                 System.out.print("Input row: ");
@@ -19,6 +20,8 @@ public class Driver {
                 System.out.print("Input column: ");
                 int col = Integer.parseInt(sc.nextLine());
                 board.setSpace(row, col, new Cha());
+
+                board.printBoard();
                 turn = !turn;
             }
             else {
@@ -32,11 +35,15 @@ public class Driver {
 
                 if(ordCount < 4) {
                     board.setSpace(row, col, new Ord());
+
+                    board.printBoard();
                     turn = !turn;
                 }
                 if(ordCount == 4) {
                     board.setSpace(row, col, new Free());
                     ordCount -= 2;
+
+                    board.printBoard(); 
 
                     System.out.println("Ord pick new space:");
                     System.out.print("Input row: ");
