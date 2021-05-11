@@ -5,4 +5,7 @@ public class Space {
     // Constructor
 
     // Methods
+    public void setPos(int row, int col, Board board) {
+        board.setSpace(row, col, this);
+    }
 }
