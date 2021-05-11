@@ -1,7 +1,5 @@
 package com.mp;
 
-public class Cha extends Space{
-
-    // Property
+public class Cha extends Space {
     
 }
