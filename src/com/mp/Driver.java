@@ -9,10 +9,11 @@ public class Driver {
         int ordCount = 0;
         Board board = new Board();
         SystemManager manager = new SystemManager();
+        DisplayManager display = new DisplayManager();
         Scanner sc = new Scanner(System.in);
 
         while(over == false) {
-            board.printBoard();
+            display.printBoard(board);
             if(turn == true && over == false) {
                 System.out.println("Cha turn:");
                 System.out.print("Input row: ");
@@ -21,7 +22,7 @@ public class Driver {
                 int col = Integer.parseInt(sc.nextLine());
                 board.setSpace(row, col, new Cha());
 
-                board.printBoard();
+                display.printBoard(board);
                 turn = !turn;
 
                 over = manager.checkOver(board);
@@ -40,14 +41,14 @@ public class Driver {
                 if(ordCount < 4) {
                     board.setSpace(row, col, new Ord());
 
-                    board.printBoard();
+                    display.printBoard(board);
                     turn = !turn;
                 }
                 if(ordCount == 4) {
                     board.setSpace(row, col, new Free());
                     ordCount -= 2;
 
-                    board.printBoard();
+                    display.printBoard(board);
                 }
             }
 
