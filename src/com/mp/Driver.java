@@ -6,7 +6,6 @@ public class Driver {
     public static void main(String[] args) {
         boolean over = false;
         boolean turn = true;
-        boolean winner;
         int ordCount = 0;
         Board board = new Board();
         SystemManager manager = new SystemManager();
