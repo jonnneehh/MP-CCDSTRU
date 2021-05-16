@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="646e4903-787d-42b2-93f7-ab785e5383a2" name="Default Changelist" comment="" />
+    <list default="true" id="646e4903-787d-42b2-93f7-ab785e5383a2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MP-CCDSTRU.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mp/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mp/Cha.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mp/DisplayManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mp/Driver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mp/Free.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mp/H.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mp/Ord.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
