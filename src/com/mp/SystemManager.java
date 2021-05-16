@@ -1,0 +1,77 @@
+package com.mp;
+
+public class SystemManager {
+
+    public SystemManager() {
+
+    }
+
+    // Methods
+    public boolean checkOver(Board board) {
+        int chaCount;
+
+        if(board.getSpace(0, 3) instanceof Cha) {
+            chaCount = 0;
+            for(int i = 0; i <= 2; i++) {
+                if(board.getSpace(i, 3) instanceof Cha)
+                    chaCount++;
+            }
+
+            if(chaCount == 3)
+                return true;
+        }
+
+        if(board.getSpace(3, 1) instanceof Cha) {
+            chaCount = 0;
+            for(int i = 1; i <= 3; i++) {
+                if(board.getSpace(3, i) instanceof Cha)
+                    chaCount++;
+            }
+
+            if(chaCount == 3)
+                return true;
+        }
+
+        if(board.getSpace(3, 3) instanceof Cha) {
+            chaCount = 0;
+            int j = 3;
+            for(int i = 3; i >= 1; i--) {
+                if(board.getSpace(i, j) instanceof Cha)
+                    chaCount++;
+
+                j--;
+            }
+
+            if(chaCount == 3)
+                return true;
+        }
+
+        if(board.getSpace(3, 0) instanceof Cha) {
+            chaCount = 0;
+            int j = 0;
+            for(int i = 3; i >= 1; i--) {
+                if(board.getSpace(i, j) instanceof Cha)
+                    chaCount++;
+
+                j++;
+            }
+
+            if(chaCount == 3)
+                return true;
+        }
+
+        int freeCount = 0;
+        for(int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if(board.getSpace(i, j) instanceof Free) {
+                    freeCount++;
+                }
+            }
+        }
+
+        if(freeCount == 0)
+            return true;
+
+        return false;
+    }
+}
