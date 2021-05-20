@@ -32,12 +32,10 @@ public class Driver {
         UserInterface userInterface = new UserInterface();
 
         while(over == false) {
-
-            // display game instructions here
-
-            // ask user press a key to continue (?)
-
-            // method to display board here
+        	
+        	userInterface.displayGameInstructions(); /***No instructions written yet***/
+            userInterface.pressAnyKeyToContinue();
+            userInterface.displayBoard(board);
 
             if(turn == true) {
 
@@ -105,5 +103,7 @@ public class Driver {
                 over = systemManager.checkOrdWin(board);
             }
         }
+        
+        userInterface.showWinner(systemManager.checkChaWin(board));
     }
 }
