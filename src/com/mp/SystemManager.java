@@ -131,4 +131,14 @@ public class SystemManager {
         return false;
     }
 
+    // Method checks if game over
+    public boolean checkOver(Board board) {
+        if(checkChaWin(board) == true)
+            return true;
+        if(checkOrdWin(board) == true)
+            return true;
+
+        return false;
+    }
+
 }
