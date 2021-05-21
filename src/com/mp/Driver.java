@@ -43,7 +43,7 @@ public class Driver {
         UserInterface userInterface = new UserInterface();
 
 
-        userInterface.displayGameInstructions(); /***No instructions written yet***/
+        userInterface.displayGameRules(); /***No instructions written yet***/
 
         while(!over) {
 
