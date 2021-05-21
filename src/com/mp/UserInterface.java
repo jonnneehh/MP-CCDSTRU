@@ -9,15 +9,22 @@ public class UserInterface {
 	}
 	
 	//Enter key must be pressed for user to continue
-	public void pressAnyKeyToContinue(){ 
-	        System.out.println("Press Enter key to continue...");
-	        try
-	        {
-	            System.in.read();
-	        }  
-	        catch(Exception e)
-	        {}  
+	public void pressEnterToContinue(){ 
+		System.out.println("Press enter to continue...");
+		
+		try{        
+			System.in.read();
+			System.in.read();
+		}
+		
+		catch(Exception e){	
+			e.printStackTrace();
+		}
 	 }
+	
+	public void clearScreen() {  
+		
+	}
 	
 	//Displays 2d array board by checking what is the instance from getSpace
 	public void displayBoard(Board board) {

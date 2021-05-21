@@ -45,9 +45,11 @@ public class Driver {
 
 
         userInterface.displayGameInstructions(); /***No instructions written yet***/
+        userInterface.pressEnterToContinue();
+        
         while(over == false) {
-            //userInterface.pressAnyKeyToContinue();
-            userInterface.displayBoard(board);
+        	userInterface.clearScreen();
+        	userInterface.displayBoard(board);
 
             if(turn == true) {
 
