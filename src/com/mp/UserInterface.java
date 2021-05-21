@@ -21,18 +21,19 @@ public class UserInterface {
 	
 	//Displays 2d array board by checking what is the instance from getSpace
 	public void displayBoard(Board board) {
-		for(int row = 0; row < 4; row++)
-			for(int col = 0; col < 4; col++) {
-				if(board.getSpace(row, col) instanceof Ord)
+		for(int row = 0; row < 4; row++) {
+			for (int col = 0; col < 4; col++) {
+				if (board.getSpace(row, col) instanceof Ord)
 					System.out.print("O ");
-				else if(board.getSpace(row, col) instanceof Cha)
+				else if (board.getSpace(row, col) instanceof Cha)
 					System.out.print("C ");
-				else if(board.getSpace(row, col) instanceof H)
+				else if (board.getSpace(row, col) instanceof H)
 					System.out.print("H ");
-				else 
+				else
 					System.out.print("  ");
 			}
-				
+			System.out.print("\n");
+		}
 	}
 	
 	//Shows the winner using checkChaWin from system manager
