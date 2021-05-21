@@ -90,10 +90,10 @@ public class SystemManager {
     // Checks if Cha wins
     public boolean checkChaWin(Board board) {
 
-        if(checkRightVertical(board) == true) return true;
-        if(checkBottomHorizontal(board) == true) return true;
-        if(checkBottomDiagonal(board) == true) return true;
-        if(checkTopDiagonal(board) == true) return true;
+        if(checkRightVertical(board)) return true;
+        if(checkBottomHorizontal(board)) return true;
+        if(checkBottomDiagonal(board)) return true;
+        if(checkTopDiagonal(board)) return true;
 
         return false;
     }
@@ -125,7 +125,7 @@ public class SystemManager {
             }
         }
 
-        if(freeCount == 0 && checkChaWin(board) == false)
+        if(freeCount == 0 && !checkChaWin(board))
             return true;
 
         return false;
@@ -133,9 +133,9 @@ public class SystemManager {
 
     // Method checks if game over
     public boolean checkOver(Board board) {
-        if(checkChaWin(board) == true)
+        if(checkChaWin(board))
             return true;
-        if(checkOrdWin(board) == true)
+        if(checkOrdWin(board))
             return true;
 
         return false;
