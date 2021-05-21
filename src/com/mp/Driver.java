@@ -35,13 +35,13 @@ public class Driver {
 
 
         userInterface.displayGameInstructions(); /***No instructions written yet***/
-        while(over == false) {
+        while(!over) {
         	
 
             //userInterface.pressAnyKeyToContinue();
             userInterface.displayBoard(board);
 
-            if(turn == true) {
+            if(turn) {
 
                 System.out.println("Cha's Turn!");
 
@@ -52,7 +52,7 @@ public class Driver {
                 // Check if chosen space is a Free space
                 if(board.getSpace(row, col) instanceof Free) {
                     board.setSpace(row, col, new Cha());
-                    turn = !turn;
+                    turn = false;
                 }
                 else {
                     System.out.println("Not a valid space!");
@@ -63,7 +63,7 @@ public class Driver {
                 // Checks if Cha has a winning position
                 over = systemManager.checkChaWin(board);
             }
-            else if(turn == false && over == false) {
+            else if(!turn && !over) {
 
                 System.out.println("Ord's Turn!");
 
@@ -79,7 +79,7 @@ public class Driver {
 
                     // Check if chosen space is a Free space
                     if(board.getSpace(row, col) instanceof Free) {
-                        turn = !turn;
+                        turn = false;
                         board.setSpace(row, col, new Ord());
 
                         // method to display board here
