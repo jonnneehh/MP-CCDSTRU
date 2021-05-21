@@ -12,15 +12,25 @@ public class Driver {
     /* Displays message asking for row number and
      * returns the inputted number    */
     public static int getRowInput() {
-        System.out.print("Input row: ");
-        return Integer.parseInt(sc.nextLine());
+        int row;
+        do{
+        	System.out.print("Input row: ");
+    		row = Integer.parseInt(sc.nextLine());
+    	}while(row <= 0 || row >= 4);
+    	
+        return row;
     }
 
     /* Displays message asking for column number and
      * returns the inputted number    */
     public static int getColInput() {
-        System.out.print("Input column: ");
-        return Integer.parseInt(sc.nextLine());
+        int col;
+        do {
+        	System.out.print("Input column: ");
+    		col = Integer.parseInt(sc.nextLine());
+    	}while(col <= 0 || col >= 4);
+        
+        return col;
     }
 
     public static void main(String[] args) {
@@ -36,8 +46,6 @@ public class Driver {
 
         userInterface.displayGameInstructions(); /***No instructions written yet***/
         while(over == false) {
-        	
-
             //userInterface.pressAnyKeyToContinue();
             userInterface.displayBoard(board);
 
@@ -71,12 +79,10 @@ public class Driver {
                 int row = getRowInput();
                 int col = getColInput();
 
-
                 ordCount++;
 
                 // executes if there are less than 4 Ord pieces on the board
                 if(ordCount < 4) {
-
                     // Check if chosen space is a Free space
                     if(board.getSpace(row, col) instanceof Free) {
                         turn = !turn;
@@ -87,7 +93,6 @@ public class Driver {
                     else {
                         System.out.println("Not a valid space!");
                     }
-
                 }
                 // executes if there are 4 Ord pieces on the board
                 else if(ordCount == 4) {
