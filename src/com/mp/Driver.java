@@ -1,5 +1,7 @@
 package com.mp;
 
+import com.mp.board.*;
+
 import java.util.*;
 
 public class Driver {
