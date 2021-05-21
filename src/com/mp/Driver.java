@@ -64,7 +64,7 @@ public class Driver {
                     turn = !turn;
                 }
                 else {
-                    System.out.println("Not a valid space!");
+                    System.out.println("\nNot a valid space!");
                 }
                 // Checks if Cha has a winning position
                 over = systemManager.checkOver(board);
@@ -87,7 +87,7 @@ public class Driver {
                         board.setSpace(row, col, new Ord());
                     }
                     else {
-                        System.out.println("Not a valid space!");
+                        System.out.println("\nNot a valid space!");
                     }
                 }
                 // executes if there are 4 Ord pieces on the board
@@ -98,7 +98,7 @@ public class Driver {
                         board.setSpace(row, col, new Free());
                     }
                     else {
-                        System.out.println("Not a valid space! Must pick a space occupied by an Ord piece");
+                        System.out.println("\nNot a valid space! Must pick a space occupied by an Ord piece");
                     }
                 }
 
