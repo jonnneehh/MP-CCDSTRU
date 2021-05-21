@@ -21,9 +21,9 @@ public class UserInterface {
 	
 	//Displays 2d array board by checking what is the instance from getSpace
 	public void displayBoard(Board board) {
-		System.out.print("  0 1 2 3\n");
+		System.out.print("  1 2 3 4\n");
 		for(int row = 0; row < 4; row++) {
-			System.out.printf("%d ", row);
+			System.out.printf("%d ", row + 1);
 			for (int col = 0; col < 4; col++) {
 				if (board.getSpace(row, col) instanceof Ord)
 					System.out.print("O ");
@@ -32,7 +32,7 @@ public class UserInterface {
 				else if (board.getSpace(row, col) instanceof H)
 					System.out.print("H ");
 				else
-					System.out.print("  ");
+					System.out.print("- ");
 			}
 			System.out.print("\n");
 		}

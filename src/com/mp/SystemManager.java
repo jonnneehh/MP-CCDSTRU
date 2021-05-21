@@ -98,6 +98,21 @@ public class SystemManager {
         return false;
     }
 
+    // Method counts the number of Ord spaces on the board
+    public int countOrd(Board board) {
+        int ordCount = 0;
+
+        for(int i = 0; i < 4; i++) {
+            for(int j = 0; j < 4; j++) {
+                if(board.getSpace(i, j) instanceof Ord) {
+                    ordCount++;
+                }
+            }
+        }
+
+        return ordCount;
+    }
+
     // Method checks if there are no more Free spaces
     public boolean checkOrdWin(Board board) {
         int freeCount = 0;
