@@ -70,7 +70,7 @@ public class Driver {
                 // method to display board here
 
                 // Checks if Cha has a winning position
-                over = systemManager.checkChaWin(board);
+                over = systemManager.checkOver(board);
             }
             else if(!turn && !over) {
 
@@ -107,7 +107,7 @@ public class Driver {
                     }
                 }
 
-                over = systemManager.checkOrdWin(board);
+                over = systemManager.checkOver(board);
             }
         }
 
