@@ -61,7 +61,7 @@ public class Driver {
                 // Check if chosen space is a Free space
                 if(board.getSpace(row, col) instanceof Free) {
                     board.setSpace(row, col, new Cha());
-                    turn = false;
+                    turn = !turn;
                 }
                 else {
                     System.out.println("Not a valid space!");
@@ -84,7 +84,7 @@ public class Driver {
                 if(systemManager.countOrd(board) < 3) {
                     // Check if chosen space is a Free space
                     if(board.getSpace(row, col) instanceof Free) {
-                        turn = false;
+                        turn = !turn;
                         board.setSpace(row, col, new Ord());
 
                         // method to display board here
@@ -110,6 +110,8 @@ public class Driver {
                 over = systemManager.checkOver(board);
             }
         }
+
+        userInterface.displayBoard(board);
 
         userInterface.showWinner(systemManager.checkChaWin(board));
     }
