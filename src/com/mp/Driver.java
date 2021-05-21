@@ -14,11 +14,11 @@ public class Driver {
     public static int getRowInput() {
         int row;
         do{
-        	System.out.print("Input row: ");
-    		row = Integer.parseInt(sc.nextLine());
-    	}while(row <= 0 || row >= 4);
-    	
-        return row;
+            System.out.print("Input row: ");
+            row = Integer.parseInt(sc.nextLine());
+        }while(row < 1 || row > 4);
+
+        return row - 1;
     }
 
     /* Displays message asking for column number and
@@ -26,11 +26,11 @@ public class Driver {
     public static int getColInput() {
         int col;
         do {
-        	System.out.print("Input column: ");
-    		col = Integer.parseInt(sc.nextLine());
-    	}while(col <= 0 || col >= 4);
-        
-        return col;
+            System.out.print("Input column: ");
+            col = Integer.parseInt(sc.nextLine());
+        }while(col < 1 || col > 4);
+
+        return col - 1;
     }
 
     public static void main(String[] args) {
@@ -38,20 +38,19 @@ public class Driver {
         // System Variables
         boolean over = false;
         boolean turn = true;
-        int ordCount = 0;
         SystemManager systemManager = new SystemManager();
         Board board = new Board();
         UserInterface userInterface = new UserInterface();
 
 
         userInterface.displayGameInstructions(); /***No instructions written yet***/
-        userInterface.pressEnterToContinue();
-        
-        while(over == false) {
-        	userInterface.clearScreen();
-        	userInterface.displayBoard(board);
 
-            if(turn == true) {
+        while(!over) {
+
+            //userInterface.pressAnyKeyToContinue();
+            userInterface.displayBoard(board);
+
+            if(turn) {
 
                 System.out.println("Cha's Turn!");
 
@@ -62,7 +61,7 @@ public class Driver {
                 // Check if chosen space is a Free space
                 if(board.getSpace(row, col) instanceof Free) {
                     board.setSpace(row, col, new Cha());
-                    turn = !turn;
+                    turn = false;
                 }
                 else {
                     System.out.println("Not a valid space!");
@@ -71,9 +70,9 @@ public class Driver {
                 // method to display board here
 
                 // Checks if Cha has a winning position
-                over = systemManager.checkChaWin(board);
+                over = systemManager.checkOver(board);
             }
-            else if(turn == false && over == false) {
+            else if(!turn && !over) {
 
                 System.out.println("Ord's Turn!");
 
@@ -81,13 +80,11 @@ public class Driver {
                 int row = getRowInput();
                 int col = getColInput();
 
-                ordCount++;
-
                 // executes if there are less than 4 Ord pieces on the board
-                if(ordCount < 4) {
+                if(systemManager.countOrd(board) < 3) {
                     // Check if chosen space is a Free space
                     if(board.getSpace(row, col) instanceof Free) {
-                        turn = !turn;
+                        turn = false;
                         board.setSpace(row, col, new Ord());
 
                         // method to display board here
@@ -97,12 +94,11 @@ public class Driver {
                     }
                 }
                 // executes if there are 4 Ord pieces on the board
-                else if(ordCount == 4) {
+                else if(systemManager.countOrd(board) == 3) {
 
                     // Check if chosen space is an Ord space
                     if(board.getSpace(row, col) instanceof Ord) {
                         board.setSpace(row, col, new Free());
-                        ordCount -= 2;
 
                         // method to display board here
                     }
@@ -111,10 +107,10 @@ public class Driver {
                     }
                 }
 
-                over = systemManager.checkOrdWin(board);
+                over = systemManager.checkOver(board);
             }
         }
-        
+
         userInterface.showWinner(systemManager.checkChaWin(board));
     }
 }
