@@ -66,28 +66,25 @@ public class Driver {
                 else {
                     System.out.println("Not a valid space!");
                 }
-
-                // method to display board here
-
                 // Checks if Cha has a winning position
                 over = systemManager.checkOver(board);
             }
             else if(!turn && !over) {
 
                 System.out.println("Ord's Turn!");
-
+                
+                if(systemManager.countOrd(board) == 3) System.out.println("Choose a piece to remove!\n");
+                
                 // Get Ord Input
                 int row = getRowInput();
                 int col = getColInput();
-
+                
                 // executes if there are less than 4 Ord pieces on the board
                 if(systemManager.countOrd(board) < 3) {
                     // Check if chosen space is a Free space
                     if(board.getSpace(row, col) instanceof Free) {
                         turn = !turn;
                         board.setSpace(row, col, new Ord());
-
-                        // method to display board here
                     }
                     else {
                         System.out.println("Not a valid space!");
@@ -95,12 +92,10 @@ public class Driver {
                 }
                 // executes if there are 4 Ord pieces on the board
                 else if(systemManager.countOrd(board) == 3) {
-
+                	
                     // Check if chosen space is an Ord space
                     if(board.getSpace(row, col) instanceof Ord) {
                         board.setSpace(row, col, new Free());
-
-                        // method to display board here
                     }
                     else {
                         System.out.println("Not a valid space! Must pick a space occupied by an Ord piece");
@@ -112,7 +107,6 @@ public class Driver {
         }
 
         userInterface.displayBoard(board);
-
         userInterface.showWinner(systemManager.checkChaWin(board));
     }
 }

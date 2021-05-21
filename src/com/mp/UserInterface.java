@@ -22,13 +22,9 @@ public class UserInterface {
 		}
 	 }
 	
-	public void clearScreen() {  
-		
-	}
-	
 	//Displays 2d array board by checking what is the instance from getSpace
 	public void displayBoard(Board board) {
-		System.out.print("  1 2 3 4\n");
+		System.out.print("\n\n  1 2 3 4\n");
 		for(int row = 0; row < 4; row++) {
 			System.out.printf("%d ", row + 1);
 			for (int col = 0; col < 4; col++) {
