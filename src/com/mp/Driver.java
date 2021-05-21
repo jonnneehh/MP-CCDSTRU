@@ -33,10 +33,12 @@ public class Driver {
         Board board = new Board();
         UserInterface userInterface = new UserInterface();
 
+
+        userInterface.displayGameInstructions(); /***No instructions written yet***/
         while(over == false) {
         	
-        	userInterface.displayGameInstructions(); /***No instructions written yet***/
-            userInterface.pressAnyKeyToContinue();
+
+            //userInterface.pressAnyKeyToContinue();
             userInterface.displayBoard(board);
 
             if(turn == true) {
