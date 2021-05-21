@@ -6,6 +6,13 @@ public class UserInterface {
 	//Displays instructions of the game
 	public void displayGameInstructions() {
 		System.out.println("Instructions:");
+		System.out.println("In this game, there are two players: Cha and Ord.");
+		System.out.println("\nCha has the first turn and Ord goes next.");
+		System.out.println("\nCha wins when it completes at least one of the following positions: ");
+		System.out.println("\nOrd wins when it fills all the spaces so that Cha cannot complete any winning position.");
+		System.out.println("However, Ord can only have 3 pieces on the board at a time.");
+		System.out.println("If Ord has 3 pieces on the board already, then it has to remove one piece and place it on an empty space.");
+		System.out.println("\nBoth players cannot place pieces on the H spaces.");
 	}
 	
 	//Enter key must be pressed for user to continue
