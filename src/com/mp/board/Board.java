@@ -7,25 +7,22 @@ public class Board {
 
     public Board(){
         this.board = new Space[4][4];
-        // Set H Spaces
-        setSpace(0,0,new H());
-        setSpace(0,1, new H());
-        setSpace(0,2, new H());
-        setSpace(1,0, new H());
-        setSpace(2,0, new H());
 
         // Set Free Spaces
-        setSpace(0,3, new Free());
-        setSpace(1,1, new Free());
-        setSpace(1,2 , new Free());
-        setSpace(1,3 , new Free());
-        setSpace(2,1 , new Free());
-        setSpace(2,2 , new Free());
-        setSpace(2,3 , new Free());
-        setSpace(3,0 , new Free());
-        setSpace(3,1 , new Free());
-        setSpace(3,2 , new Free());
-        setSpace(3,3 , new Free());
+        for(int i = 0; i < 4; i++) {
+            for(int j = 0; j < 4; j++) {
+                setSpace(i, j, new Free());
+            }
+        }
+
+        // Set H Spaces
+        for(int i = 0; i <= 2; i++) {
+            setSpace(0, i, new H());
+        }
+
+        for(int i = 0; i <= 2; i++) {
+            setSpace(i, 0, new H());
+        }
     }
 
     // Methods
