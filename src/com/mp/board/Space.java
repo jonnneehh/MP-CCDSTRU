@@ -5,7 +5,4 @@ public class Space {
     public Space(){
 
     }
-    public Space(int row, int col){
-
-    }
 }
