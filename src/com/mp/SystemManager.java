@@ -3,6 +3,7 @@ import com.mp.board.*;
 
 public class SystemManager {
 
+    // Constructor
     public SystemManager() {
 
     }

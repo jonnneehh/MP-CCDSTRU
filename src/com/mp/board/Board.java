@@ -27,9 +27,12 @@ public class Board {
 
     // Methods
 
+    // Method adds a new space on the board
     public void setSpace(int row, int col, Space space){
         this.board[row][col] = space;
     }
+
+    // Returns a space on the board 
     public Space getSpace(int row, int col){
         return this.board[row][col];
     }
